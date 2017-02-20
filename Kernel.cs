@@ -10,6 +10,9 @@ namespace csOS1_1
     {
         string current_directory = "0:\\" + Directory.GetCurrentDirectory();
 
+        ///<summary>
+        ///Before the operating system boots
+        ///</summary>
         protected override void BeforeRun()
         {
             fs = new Sys.FileSystem.CosmosVFS();
@@ -21,12 +24,18 @@ namespace csOS1_1
         public Sys.Network.EthernetPacket ethernet;
         public Sys.FileSystem.CosmosVFS fs;
 
+        ///<summary>
+        ///The operating system utilities
+        ///</summary>
         private void Utilities()
         {
             
             Console.CursorVisible = true;
         }
 
+        ///<summary>
+        ///Operating System
+        ///</summary>
         protected override void Run()
         {
             Utilities();
