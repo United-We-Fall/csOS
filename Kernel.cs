@@ -67,7 +67,7 @@ namespace csOS1_1
                     break;
 #pragma warning restore CS0162 // Unreachable code detected
                 case "help":
-                    Console.WriteLine("Found 13 in the directory: \n HELP: Shows a list of commands \n RESTART: Restarts client \n SHUTDOWN: Shuts down client \n CLEAR: Clears the console \n ECHO: Echoes a line of text into the console \n SYSINFO: Gives the system infomation \n DIR: Lists the volume directories \n CSPAD: csOS Text Editor. Can write to files \n DEL: Deletes the specified file \n LSDIR: Lists the files in a directory \n PRINT: Displays the text of the file \n MKDIR: Makes the directory of the users choice \n CD: Goes to the user-specified directory");
+                    Console.WriteLine("Found 13 in the directory: \n HELP: Shows a list of commands \n RESTART: Restarts client \n SHUTDOWN: Shuts down client \n CLEAR: Clears the console \n ECHO: Echoes a line of text into the console \n COLOR: Changes the console color based on the user prefrences \n SYSINFO: Gives the system infomation \n DIR: Lists the volume directories \n CSPAD: csOS Text Editor. Can write to files \n DEL: Deletes the specified file \n LSDIR: Lists the files in a directory \n PRINT: Displays the text of the file \n MKDIR: Makes the directory of the users choice \n CD: Goes to the user-specified directory");
                     break;
                 case "clear":
                     Console.Clear();
