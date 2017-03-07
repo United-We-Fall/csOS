@@ -18,10 +18,21 @@ namespace csOS1_1
             fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
             Console.Clear();
-            Console.WriteLine("csOS booted successfully.");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Welcome back User!");
+            Console.Write("Password:");
+            string input = Console.ReadLine();
+            if (input == "csOS_user")
+            {
+                Console.Clear();
+                Run();
+            }
+            else
+            {
+                BeforeRun();
+            }
         }
-
-        public Sys.Network.EthernetPacket ethernet;
+        
         public Sys.FileSystem.CosmosVFS fs;
 
         ///<summary>
@@ -29,8 +40,8 @@ namespace csOS1_1
         ///</summary>
         private void Utilities()
         {
-            
             Console.CursorVisible = true;
+            Sys.Global.NumLock = true;
         }
 
         ///<summary>
@@ -65,6 +76,49 @@ namespace csOS1_1
                     Console.Write("Line to echo:");
                     string input1 = Console.ReadLine();
                     Console.WriteLine(input1);
+                    break;
+                case "color":
+                    Console.WriteLine("Valid colors: ROYGBIV, Black, and White");
+                    Console.Write("Color:");
+                    string input2 = Console.ReadLine();
+                    switch (input2)
+                    {
+                        case "red":
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Color changed");
+                            break;
+                        case "orange":
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            break;
+                        case "yellow":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            break;
+                        case "green":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case "blue":
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            break;
+                        case "indigo":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case "violet":
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            break;
+                        case "black":
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            break;
+                        case "white":
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        case "reset":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Color reset.");
+                            break;
+                        default:
+                            Console.WriteLine("The color you have inputed is not a valid color. Please use ROYGBIV and Black and White.");
+                            break;
+                    }
                     break;
                 case "cspad":
                     Console.WriteLine("Entering CSPad...");
@@ -155,6 +209,34 @@ namespace csOS1_1
                     Console.WriteLine("The entered command: '" + userinput + "' does not exist. Please try again.");
                     break;
             }
+        }
+        
+        private void CSPadGUI()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Write("CSPad                                                                          ");
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.Write("X");
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.Write("This application uses a test text-based GUI that is still in the works. If you like it, I will including this as the main csOS GUI in a later version.          ");
+            Console.Write("                                                                        Enter:OK");
+            Console.ReadLine();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Write("CTRL+F:File  CTRL+E:Edit                                                 ");
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.Write("Enter:X");
         }
     }
 }
